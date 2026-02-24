@@ -2,23 +2,17 @@
 # Country
 # Audience
 # Online, Offline, Product, Service
-
+import os
 import streamlit as st
 from google import genai
 from google.genai import types
-import os
 from reportlab.pdfgen import canvas
 
-st.title("AI Business Idea validator")
-
+st.title("AI Business Idea Evaluator")
 idea = st.text_area("Business Idea:")
-
 location = st.text_input("Target Country & City")
-
 biz_type = st.selectbox("Business Type",["Online","Offline","Product","Service"])
-
 audience = st.text_input("Who's your audience")
-
 client= genai.Client(api_key=os.getenv("API_KEY"))
 
 if st.button("Generate Report"):
