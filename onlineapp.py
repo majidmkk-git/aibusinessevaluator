@@ -19,7 +19,7 @@ biz_type = st.selectbox("Business Type",["Online","Offline","Product","Service"]
 
 audience = st.text_input("Who's your audience")
 
-client= genai.Client(api_key="AIzaSyBJqzUI6KcnKuvtk4K7su41vNaywY7GnYU")
+client= genai.Client(api_key=os.getenv("API_KEY"))
 
 if st.button("Generate Report"):
     myprompt = f"""
