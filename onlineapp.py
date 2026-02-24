@@ -17,13 +17,16 @@ client= genai.Client(api_key=os.getenv("API_KEY"))
 
 if st.button("Generate Report"):
     myprompt = f"""
+    The only purpose is to get a potential business idea evaluated, if the idea contains anything irrelevant to the purpose, 
+    please do not answer and remind me back that the purpose of this site is to get idea evaluated for a potential business opportunity!
+    
     Analyze this business idea:
     Idea: {idea}
     Location: {location}
     Type: {biz_type}
     Audience: {audience}
 
-    Give me a structured report with:
+    Give me a structured report in 500 words with:
     1. Overview
     2. Market Analysis
     3. Revenue possibility
